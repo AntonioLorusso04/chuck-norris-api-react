@@ -1,0 +1,20 @@
+.Button{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    line-height: 35px;
+    background-color: #D68FD6;
+    border-radius: 10px;
+    margin: 10px;
+}
+.Button:hover{
+    
+}
+
+.Button.variantCarica{
+
+}
+
+.Button.variantCopia{
+
+}

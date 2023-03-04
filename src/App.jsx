@@ -1,15 +1,27 @@
 import { useState } from 'react'
-import './styles/App.css'
 import Title from './components/Title'
+import './styles/App.css'
+import Button from './components/Button'
 
 function App() {
   const [count, setCount] = useState(0)
+  
+  const [joke, setJoke] = useState(null)
 
   return (
     <div className="App">
-      <Title>
-        
-      </Title>
+      <h1>Chuck Norris API Joke Generator</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt animi, 
+        consequatur doloribus ad sed sunt quasi voluptatum atque omnis porro nostrum molestiae repellendus exercitationem numquam sapiente maxime, 
+        corrupti quis veritatis.</p>
+        <div class="card">
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+
+          <Button text="Carica Joke"></Button>
+          <Button text="Copia Joke"></Button>
+        </div>
     </div>
   )
 }

@@ -1,9 +1,10 @@
-import src/style/Button.css
+import { useState } from 'react'
+import '/src/styles/Button.css'
 
-function Button({ content }) {
+function Button({ text }) {
     return (
-    <div className="Button disabled">
-        Carica Joke: { content }
+    <div className="Button">
+        { text }
     </div>
     )
 }
