@@ -6,7 +6,11 @@ import Button from './components/Button'
 function App() {
   const [count, setCount] = useState(0)
   
-  const [joke, setJoke] = useState(null)
+  const [joke, setJoke] = useState("")
+
+  let loadJokeCallback = function(){
+    console.log()
+  }
 
   return (
     <div className="App">
@@ -19,8 +23,8 @@ function App() {
             count is {count}
           </button>
 
-          <Button text="Carica Joke"></Button>
-          <Button text="Copia Joke"></Button>
+          <Button text="Carica Joke" callback={loadTextCallback}></Button>
+          <Button text="Copia Joke" variant ={ joke === "" ? "disabled" : undefined} callback={copyTextCallback}></Button>
         </div>
     </div>
   )
