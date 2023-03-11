@@ -8,13 +8,13 @@
     margin: 10px;
 }
 .ButtonCarica.hover{
-    
+    color: #464F51;
 }
 
 .ButtonCarica.mouseOn{
-
+    border-color: #11DDB4;
 }
 
 .ButtonCopia.disabled{
-
+    background-color: white;
 }

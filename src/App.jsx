@@ -16,7 +16,8 @@ function App() {
     <div className="App">
       <h1>Chuck Norris API Joke Generator</h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt animi, 
-        consequatur doloribus ad sed sunt quasi voluptatum atque omnis porro nostrum molestiae repellendus exercitationem numquam sapiente maxime, 
+        consequatur doloribus ad sed sunt quasi voluptatum atque omnis porro nostrum 
+        molestiae repellendus exercitationem numquam sapiente maxime, 
         corrupti quis veritatis.</p>
         <div class="card">
           <button onClick={() => setCount((count) => count + 1)}>
@@ -24,7 +25,8 @@ function App() {
           </button>
 
           <Button text="Carica Joke" callback={loadTextCallback}></Button>
-          <Button text="Copia Joke" variant ={ joke === "" ? "disabled" : undefined} callback={copyTextCallback}></Button>
+          <Button text="Copia Joke" variant ={ joke === "" ? "disabled" : undefined } callback={copyTextCallback}></Button>
+          <Button variant={ joke === "" ? "hover" : undefined } callback={loadtextCallBack}></Button>
         </div>
     </div>
   )
