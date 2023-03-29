@@ -1,4 +1,14 @@
 import { useState } from 'react'
-import reactLogo from '.assets/react.svg'
+import '..style/Dropdown.css'
 
-function Dropdown {(
+function Dropdown(props){
+    return(
+        <div className="Dropdown">
+            <select id={props.id}>
+                {props.values.map((el, index) => {return <option value={el} key={index}>{el}</option>})}
+            </select>
+        </div>
+    )
+}
+
+export default Dropdown
