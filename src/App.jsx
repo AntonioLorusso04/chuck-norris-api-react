@@ -40,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <Title>Chuck Norris API Joke Generator</Title>
+      <img src="Chuck Norris GIF.gif" alt="GIF Chuck Norris" width="200px" height="200px" ></img>
           <Button id= "carica" text="Carica Joke" callback={generateJoke}></Button>
           <Dropdown id= "dropdown" values={categories}></Dropdown>
           <JokeText id= "JokeText">{joke}</JokeText>{joke}
