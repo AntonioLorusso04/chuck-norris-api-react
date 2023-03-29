@@ -5,11 +5,10 @@
     font-family: "Press Start 2P", sans-serif; 
     border-radius: 10px;
     margin: 10px;
-    text: #000000
 }
 
 .ButtonCarica:disabled{
-    text: #464F51;
+    background-color: #464F51;
 }
 
 .ButtonCarica:hover{
@@ -24,7 +23,7 @@
 }
 
 .ButtonCopia:disabled{
-    text: #464F51;
+    background-color: #464F51;
 }
 
 .ButtonCopia:hover{
