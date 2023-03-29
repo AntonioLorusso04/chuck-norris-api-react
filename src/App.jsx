@@ -1,33 +1,50 @@
 import { useState } from 'react'
-import Title from './components/Title'
 import './styles/App.css'
+import Title from './components/Title'
 import Button from './components/Button'
+import Dropdown from './components/Dropdown'
+import JokeText from './components/JokeText'
 
 function App() {
-  const [count, setCount] = useState(0)
-  
-  const [joke, setJoke] = useState("")
+  const [categories, setCategories] = useState([]);
+  const [joke, setJoke] = useState("");
+  const [clicked, setClicked] = useState(false);
+  let linkJoke = "https://api.chucknorris.io/jokes/categories";
+  fetch(linkJoke).then((resp) => {
+    return resp.json();
+  }).then(data =>{
+    data.unshift("random");
+    setCategories(data);
+  }).catch((e) =>{
+    console.log(e)
+  })
 
-  let loadJokeCallback = function(){
-    console.log()
+  function generateJoke(){
+    let selectedCategory = document.getElementById("dropdown").value
+    let url = "https://api.chucknorris.io/jokes/" + (selectedCategory === "random" ? "random":("random?category=") + selectedCategory);
+    fetch(url).then((resp)=>{
+      return resp.json();
+    }).then(data=>{
+      setJoke(data.value);
+      setClicked(true);
+    }).catch((e)=>{
+      console.log(e)
+    })
+  }
+
+  function copyJoke(){
+    let jokeText = document.getElementById("JokeText");
+    navigator.clipboard.writeText(jokeText.innerText);
   }
 
   return (
     <div className="App">
-      <h1>Chuck Norris API Joke Generator</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt animi, 
-        consequatur doloribus ad sed sunt quasi voluptatum atque omnis porro nostrum 
-        molestiae repellendus exercitationem numquam sapiente maxime, 
-        corrupti quis veritatis.</p>
-        <div class="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-
-          <Button text="Carica Joke" callback={loadTextCallback}></Button>
-          <Button text="Copia Joke" variant ={ joke === "" ? "disabled" : undefined } callback={copyTextCallback}></Button>
-          <Button variant={ joke === "" ? "hover" : undefined } callback={loadtextCallBack}></Button>
-        </div>
+      <Title>Chuck Norris API Joke Generator</Title>
+          <Button id= "carica" text="Carica Joke" callback={generateJoke}></Button>
+          <Dropdown id= "dropdown" values={categories}></Dropdown>
+          <JokeText id= "JokeText">{joke}</JokeText>{joke}
+          <Button id= "copia" text="Copia Joke" variant ={ clicked === true ? "disabled" : undefined } callback={copyJoke}></Button>
+          <Button variant={ clicked === "" ? "hover" : undefined } callback={copyJoke}></Button>
     </div>
   )
 }
