@@ -1,20 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .ButtonCarica{
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    line-height: 35px;
     background-color: #D68FD6;
+    font-family: "Press Start 2P", sans-serif; 
+    border-radius: 10px;
+    margin: 10px;
+    text: #000000
+}
+
+.ButtonCarica:disabled{
+    text: #464F51;
+}
+
+.ButtonCarica:hover{
+    border-color: #825782;
+}
+
+.ButtonCopia{
+    background-color: #0FF4C6;
+    font-family: "Press Start 2P", sans-serif; 
     border-radius: 10px;
     margin: 10px;
 }
-.ButtonCarica.hover{
-    color: #464F51;
+
+.ButtonCopia:disabled{
+    text: #464F51;
 }
 
-.ButtonCarica.mouseOn{
+.ButtonCopia:hover{
     border-color: #11DDB4;
-}
-
-.ButtonCopia.disabled{
-    background-color: white;
 }

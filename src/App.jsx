@@ -43,7 +43,6 @@ function App() {
       <img src="Chuck Norris GIF.gif" alt="GIF Chuck Norris" width="200px" height="200px" ></img>
           <Button id= "carica" text="Carica Joke" callback={generateJoke}></Button>
           <Dropdown id= "dropdown" values={categories}></Dropdown>
-          <JokeText id= "JokeText">{joke}</JokeText>{joke}
           <Button id= "copia" text="Copia Joke" variant ={ clicked === true ? "disabled" : undefined } callback={copyJoke}></Button>
           <Button variant={ clicked === "" ? "hover" : undefined } callback={copyJoke}></Button>
     </div>
