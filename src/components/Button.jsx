@@ -3,22 +3,24 @@ import '/src/styles/Button.css'
 
 function Button({ text, variant, callback}) {
 
-    let classRenderer = function(){
-    let classes = [
-        'Button', 'text-center', 'align-left', variant
-    ]
-
-    return classes.join(" ")
+    let clickHandler = function(e){
+      if(callback != undefined && variant != "disabled"){
+        callback()
+      }
     }
-
-    let clickHandler
-
-
+  
+    let classRenderer = function (){
+      let classes = [
+        'Button', variant
+      ]
+      return classes.join(" ")
+    }
+  
     return (
-    <div className={classRenderer()}>
+      <div onClick={clickHandler} className={classRenderer()}>
         { text }
-    </div>
+      </div>
     )
-}
-
+  }
+  
 export default Button
